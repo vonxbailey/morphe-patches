@@ -45,11 +45,11 @@ val batteryPodsPremiumPatch = bytecodePatch(
 
         // Step 3: Return null from getRepeatedCheckMetadata so JWS parsing is never
         // attempted on the invalid NOT_LICENSED bundle data.
-        PairIPGetRepeatedCheckMetadataFingerprint.method.returnEarly()
+        // PairIPGetRepeatedCheckMetadataFingerprint.method.returnEarly()
         
         // Point 1: fb.c(Context)Z always returns true.
         // Covers: n80 AirPodsService overlay, z31.b() widget handler.
-        //BatteryPodsIsPurchasedFingerprint.method.returnEarly(true)
+        // BatteryPodsIsPurchasedFingerprint.method.returnEarly(true)
 
         // Point 2: Write PURCHASED_ITEM_NO_ADS=true to SharedPreferences in onCreate.
         // Covers: MainActivity.C(Z)V (ads), AirPodsService direct reads,
